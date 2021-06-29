@@ -7,28 +7,21 @@ const ExpressError = require('../utils/ExpressError');
 
 const Campground = require('../models/campground');
 const Review = require('../models/reviews');
+const { validateReview, isLogged, isReviewAuthor } = require('../middleware');
 
-const validateReview = (req,res,next)=>{
-    const { error } = reviewSchema.validate(req.body);
-    if(error){
-        const msg = error.details.map( el => el.message).join(',');
-        throw new ExpressError(msg,400);
-    }
-    else{
-        next();
-    }
-}
 
-router.post('/' , validateReview,  catchAsync(async (req,res)=>{
+
+router.post('/' , validateReview, isLogged,  catchAsync(async (req,res)=>{
     const campground = await Campground.findById(req.params.id);
     const review = new Review(req.body.review);
     campground.reviews.push(review);
+    review.author = req.user._id;
     await review.save();
     await campground.save();
     req.flash('success','created new review!');
     res.redirect(`/campgrounds/${campground._id}`);
 }));
-router.delete('/:reviewID', catchAsync( async(req,res)=>{
+router.delete('/:reviewID',isLogged,isReviewAuthor, catchAsync( async(req,res)=>{
     const {id , reviewID } = req.params;
     await Campground.findByIdAndUpdate(id ,{ $pull:{reviews:reviewID}});
     await Review.findByIdAndDelete(reviewID);
