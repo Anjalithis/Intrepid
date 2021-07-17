@@ -91,7 +91,7 @@ The tech stack used includes Embedded Javascripts for rendering HTML templates. 
 ![Imgur](https://i.imgur.com/kkoGOBt.png?2)
 
 ## Hosted on 
-The web-app is hosted via heroku cli for which the link is below
+The web-app is hosted via heroku cli for which the link is 
 [https://tranquil-virgin-islands-28286.herokuapp.com/](https://tranquil-virgin-islands-28286.herokuapp.com/)
 
 ## Author
