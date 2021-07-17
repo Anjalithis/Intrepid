@@ -4,7 +4,11 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 # INRTEPID
+## [Visit intrepid](https://tranquil-virgin-islands-28286.herokuapp.com/)
+
+
 ![intrepid](https://i.imgur.com/15tVfE4.png?1)
+
 ## Table of contents
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
@@ -86,6 +90,9 @@ The tech stack used includes Embedded Javascripts for rendering HTML templates. 
 
 ![Imgur](https://i.imgur.com/kkoGOBt.png?2)
 
+## Hosted on 
+The web-app is hosted via heroku cli for which the link is below
+[https://tranquil-virgin-islands-28286.herokuapp.com/](https://tranquil-virgin-islands-28286.herokuapp.com/)
 
 ## Author
 Anjali Singh
